@@ -124,7 +124,7 @@ num_pts = None
 
 # take number of points
 while (num_pts == None) : 
-    num_pts = screen.numinput("Number of Points", "Points:", 0, minval = INPUT_RANGE[0], maxval = INPUT_RANGE[1])
+    num_pts = screen.numinput("Number of Points", "How many data points ?", 0, minval = INPUT_RANGE[0], maxval = INPUT_RANGE[1])
     if (num_pts == None):
         print(f"Please enter a valid number of points in range {INPUT_RANGE}")
 
@@ -135,7 +135,7 @@ draw_axis(trl, num_pts)
 
 # take point as input from user and plot the point
 for i in range(num_pts) :
-    pt = screen.numinput(f"Point {i+1}", "Val:", 0, minval = INPUT_RANGE[0], maxval = INPUT_RANGE[1])
+    pt = screen.numinput(f"Point {i+1}", "First Value ?" if(i==0) else "Next Value ?", 0, minval = INPUT_RANGE[0], maxval = INPUT_RANGE[1])
     if (pt != None):
         plot_point(trl, (i+1,pt))
 
