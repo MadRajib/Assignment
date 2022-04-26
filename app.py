@@ -118,15 +118,22 @@ trl.hideturtle()
 
 screen.setup(WIN_WIDTH,WIN_HEIGHT)
 
+# initialize global vars
 init( -200, -200)
 num_pts = None
+
+# take number of points
 while (num_pts == None) : 
     num_pts = screen.numinput("Number of Points", "Points:", 0, minval = INPUT_RANGE[0], maxval = INPUT_RANGE[1])
     if (num_pts == None):
         print(f"Please enter a valid number of points in range {INPUT_RANGE}")
 
 num_pts = int(num_pts)
+
+# draw axis based on the points
 draw_axis(trl, num_pts)
+
+# take point as input from user and plot the point
 for i in range(num_pts) :
     pt = screen.numinput(f"Point {i+1}", "Val:", 0, minval = INPUT_RANGE[0], maxval = INPUT_RANGE[1])
     if (pt != None):
